@@ -8,119 +8,84 @@
     <meta name="description" content="Nội quy và thông tin sân Bala Pickleball">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-alert@0/dist/style.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&display=swap');
 
         :root {
-            --theme-color: #F0120F;
-            /* PPA Red */
-            --bg-color: #111827;
-            --text-color: #f8fafc;
-            --ppa-lime: #D9F99D;
-            --glass: rgba(255, 255, 255, 0.05);
-            --glass-border: rgba(255, 255, 255, 0.1);
+            --theme-color: #BE123C;
+            /* Strong PPA Crimson */
+            --navy-blue: #0F172A;
+            --off-white: #F8FAFB;
+            --border-gray: #E2E8F0;
         }
 
         body {
             font-family: 'Outfit', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            font-size: 16px;
+            color: var(--navy-blue);
+            background-color: #fff;
             line-height: 1.6;
         }
 
         .markdown-section {
-            max-width: 1000px;
-            background: var(--glass);
-            backdrop-filter: blur(12px);
-            border: 1px solid var(--glass-border);
-            border-radius: 16px;
-            padding: 50px !important;
-            margin: 40px auto;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            max-width: 900px !important;
+            margin: 0 auto !important;
+            padding: 40px !important;
         }
 
-        /* Coverpage Styling - PPA Style */
-        section.cover {
-            background: linear-gradient(rgba(17, 24, 39, 0.7), rgba(17, 24, 39, 0.9)),
-                url('assets/hero.png') center/cover no-repeat !important;
-            display: flex;
-            align-items: center;
+        /* Customize Alert styles to match theme */
+        .alert {
+            border-radius: 8px !important;
+            margin: 2em 0 !important;
         }
 
-        section.cover .cover-main {
-            z-index: 10;
-            margin: 0 auto;
-        }
-
-        section.cover h1 {
-            font-size: 5rem;
-            font-weight: 800;
-            letter-spacing: -2px;
-            text-transform: uppercase;
-            color: #fff !important;
-            margin-bottom: 20px;
-            background: none;
-            -webkit-text-fill-color: initial;
-        }
-
-        section.cover h1 span {
-            color: var(--ppa-lime) !important;
-        }
-
-        section.cover p {
-            font-size: 1.8rem;
-            color: #d1d5db;
-            max-width: 800px;
-            margin: 0 auto 40px;
-        }
-
-        /* Button Styling */
-        section.cover a {
-            padding: 15px 40px !important;
-            border-radius: 4px !important;
-            font-weight: 800 !important;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-            margin: 10px !important;
-            display: inline-block !important;
-            text-decoration: none;
-        }
-
-        section.cover a:first-of-type {
-            background-color: var(--theme-color) !important;
-            color: white !important;
-            border: 2px solid var(--theme-color) !important;
-        }
-
-        section.cover a:last-of-type {
-            background-color: transparent !important;
-            color: white !important;
-            border: 2px solid white !important;
-        }
-
-        section.cover a:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(240, 18, 15, 0.3);
-        }
-
-        /* Content Styling */
         h1,
         h2,
         h3 {
+            color: var(--navy-blue);
             font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: -0.5px;
-            color: var(--ppa-lime);
         }
 
+        h1 {
+            font-size: 2.5rem;
+            margin-top: 1em;
+            border-bottom: 2px solid var(--border-gray);
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-top: 2em;
+            border-left: 6px solid var(--theme-color);
+            padding-left: 15px;
+        }
+
+        a {
+            color: var(--theme-color);
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Sidebar Styling */
         .sidebar {
-            background-color: #0f172a !important;
-            border-right: 1px solid var(--glass-border) !important;
+            background-color: var(--off-white) !important;
+            border-right: 1px solid var(--border-gray) !important;
         }
 
         .sidebar-nav li a {
+            color: #475569 !important;
             font-weight: 600;
+        }
+
+        .sidebar-nav li a.active {
+            color: var(--theme-color) !important;
+            border-right: 3px solid var(--theme-color);
         }
     </style>
 </head>
@@ -130,12 +95,15 @@
     <script>
         window.$docsify = {
             name: 'Bala Pickleball',
-            coverpage: true,
-            onlyCover: false,
-            loadSidebar: false,
+            coverpage: false,
+            loadSidebar: true,
             subMaxLevel: 2,
             auto2top: true,
             search: 'auto',
+            alias: {
+                '/staff/': '/staff/README.md',
+                '/staff': '/staff/README.md'
+            },
             plugins: [
                 function (hook, vm) {
                     // Cache busting: Force refresh markdown files every 5 mins
@@ -151,22 +119,25 @@
                         };
                     });
 
-                    hook.beforeEach(function (html) {
+                    hook.beforeEach(function (html, next) {
                         // Password protection for /staff
-                        if (vm.route.path.startsWith('/staff')) {
+                        if (vm.route.path.includes('/staff')) {
                             if (sessionStorage.getItem('access') !== 'bala2026') {
                                 const pass = prompt("Vui lòng nhập mật khẩu nhân viên:");
                                 if (pass === 'bala2026') {
                                     sessionStorage.setItem('access', 'bala2026');
-                                    return html;
+                                    next(html);
                                 } else {
                                     alert("Sai mật khẩu!");
                                     window.location.hash = '#/';
-                                    return "";
+                                    next("");
                                 }
+                            } else {
+                                next(html);
                             }
+                        } else {
+                            next(html);
                         }
-                        return html;
                     });
                 }
             ]
@@ -175,6 +146,7 @@
     <!-- Docsify v4 -->
     <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
     <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify-alert@0"></script>
 </body>
 
 </html>
