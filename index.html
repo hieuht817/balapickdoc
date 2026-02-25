@@ -9,67 +9,118 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&display=swap');
+
         :root {
-            --theme-color: #00ff88;
-            --bg-color: #0f172a;
+            --theme-color: #F0120F;
+            /* PPA Red */
+            --bg-color: #111827;
             --text-color: #f8fafc;
-            --glass: rgba(255, 255, 255, 0.03);
-            --glass-border: rgba(255, 255, 255, 0.08);
+            --ppa-lime: #D9F99D;
+            --glass: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
         }
 
         body {
+            font-family: 'Outfit', sans-serif;
             background-color: var(--bg-color);
-            background-image:
-                radial-gradient(circle at top right, rgba(0, 255, 136, 0.1), transparent),
-                radial-gradient(circle at bottom left, rgba(0, 102, 255, 0.1), transparent);
+            color: var(--text-color);
+            line-height: 1.6;
         }
 
         .markdown-section {
-            max-width: 900px;
+            max-width: 1000px;
             background: var(--glass);
             backdrop-filter: blur(12px);
             border: 1px solid var(--glass-border);
-            border-radius: 24px;
-            padding: 40px !important;
+            border-radius: 16px;
+            padding: 50px !important;
             margin: 40px auto;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
         }
 
-        /* Coverpage Styling */
+        /* Coverpage Styling - PPA Style */
         section.cover {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
+            background: linear-gradient(rgba(17, 24, 39, 0.7), rgba(17, 24, 39, 0.9)),
+                url('assets/hero.png') center/cover no-repeat !important;
+            display: flex;
+            align-items: center;
         }
 
         section.cover .cover-main {
-            z-index: 1;
+            z-index: 10;
+            margin: 0 auto;
         }
 
         section.cover h1 {
-            font-size: 4.5rem;
-            background: linear-gradient(135deg, #00ff88, #0066ff);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 5rem;
             font-weight: 800;
+            letter-spacing: -2px;
+            text-transform: uppercase;
+            color: #fff !important;
+            margin-bottom: 20px;
+            background: none;
+            -webkit-text-fill-color: initial;
+        }
+
+        section.cover h1 span {
+            color: var(--ppa-lime) !important;
         }
 
         section.cover p {
-            font-size: 1.5rem;
-            color: #94a3b8;
+            font-size: 1.8rem;
+            color: #d1d5db;
+            max-width: 800px;
+            margin: 0 auto 40px;
         }
 
-        .btn-primary {
-            background: linear-gradient(135deg, #00ff88, #0066ff) !important;
-            border: none !important;
-            color: #0f172a !important;
-            font-weight: 700 !important;
+        /* Button Styling */
+        section.cover a {
+            padding: 15px 40px !important;
+            border-radius: 4px !important;
+            font-weight: 800 !important;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            margin: 10px !important;
+            display: inline-block !important;
+            text-decoration: none;
         }
 
-        /* Sidebar Styling */
+        section.cover a:first-of-type {
+            background-color: var(--theme-color) !important;
+            color: white !important;
+            border: 2px solid var(--theme-color) !important;
+        }
+
+        section.cover a:last-of-type {
+            background-color: transparent !important;
+            color: white !important;
+            border: 2px solid white !important;
+        }
+
+        section.cover a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(240, 18, 15, 0.3);
+        }
+
+        /* Content Styling */
+        h1,
+        h2,
+        h3 {
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            color: var(--ppa-lime);
+        }
+
         .sidebar {
-            background-color: rgba(15, 23, 42, 0.8) !important;
-            backdrop-filter: blur(10px);
+            background-color: #0f172a !important;
             border-right: 1px solid var(--glass-border) !important;
+        }
+
+        .sidebar-nav li a {
+            font-weight: 600;
         }
     </style>
 </head>
@@ -79,9 +130,8 @@
     <script>
         window.$docsify = {
             name: 'Bala Pickleball',
-            repo: 'https://github.com/hieuht817/balapickdoc',
             coverpage: true,
-            onlyCover: true,
+            onlyCover: false,
             loadSidebar: false,
             subMaxLevel: 2,
             auto2top: true,

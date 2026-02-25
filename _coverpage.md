@@ -1,4 +1,4 @@
-# Bala Pickleball <small>44D Bala, Hà Đông</small>
+# Bala <span>Pickleball</span> <small>44D Bala, Hà Đông</small>
 
 > Kiến tạo cộng đồng thể thao văn minh, đẳng cấp và tràn đầy năng lượng.
 
