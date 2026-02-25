@@ -6,9 +6,12 @@
 
 ## 🎾 Các dịch vụ cung cấp
 - **Thuê sân:** Theo giờ hoặc theo slot cố định hàng tháng.
+- **CLB, Xé Vé, Social:** Bạn chưa có đủ đội, chúng tôi luôn có sẵn sân chơi cộng đồng để bạn tham gia. Hỗ trợ ghép đội. 
+- **Zalo** Nhóm 1: https://zalo.me/g/mnqfms106
+- **Zalo** Nhóm 2: https://zalo.me/g/sspxiq719
 - **Đào tạo:** Các lớp học cơ bản cho người mới và nâng cao cho vận động viên.
-- **Cho thuê thiết bị:** Vợt, bóng, máy tập bắn bóng.
-- **Canteen:** Nước giải khát, đồ ăn nhẹ và khu vực nghỉ ngơi có điều hòa.
+- **Bán và Cho thuê thiết bị:** Vợt, bóng, máy tập bắn bóng.
+- **Canteen:** Nước giải khát, đồ ăn nhẹ và khu vực nghỉ ngơi.
 
 ## 🚗 Hướng dẫn đường đi & Chỗ đỗ xe
 ### Hướng dẫn đường đi
@@ -21,8 +24,8 @@
 
 ### Chỗ đỗ xe
 - **Xe máy:** Khu vực đỗ xe miễn phí sát cửa sân.
-- **Ô tô:** Bãi đỗ rộng rãi ngay phía trước, có nhân viên bảo vệ hướng dẫn vị trí đỗ.
+- **Ô tô:** Bãi đỗ rộng rãi: 4 slot đỗ trong sân, 3 slot đỗ trước cổng, 5 slot đỗ bãi gara D&K.
 - **Lưu ý:** Vui lòng khóa xe và không để đồ giá trị trong cốp xe.
 
 ---
-**Hotline đặt sân: [Số điện thoại của bạn]**
+**Hotline đặt sân: [0918.113.247]**
