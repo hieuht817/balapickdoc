@@ -1,4 +1,5 @@
 # 📞 Thông tin Sân & Dịch vụ
+![Sports Action](assets/action.png)
 
 ## ⏰ Giờ mở cửa
 - **Thứ 2 - Chủ Nhật:** 05:00 - 23:00
@@ -9,6 +10,8 @@
 - **CLB, Xé Vé, Social:** Bạn chưa có đủ đội, chúng tôi luôn có sẵn sân chơi cộng đồng để bạn tham gia. Hỗ trợ ghép đội. 
 - **Zalo** Nhóm 1: https://zalo.me/g/mnqfms106
 - **Zalo** Nhóm 2: https://zalo.me/g/sspxiq719
+- **Alobo** https://datlich.alobo.vn/san/sport_bala_arena_pickleball
+- **Hotline đặt sân: [0918.113.247]**
 - **Đào tạo:** Các lớp học cơ bản cho người mới và nâng cao cho vận động viên.
 - **Bán và Cho thuê thiết bị:** Vợt, bóng, máy tập bắn bóng.
 - **Canteen:** Nước giải khát, đồ ăn nhẹ và khu vực nghỉ ngơi.

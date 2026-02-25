@@ -11,10 +11,65 @@
     <style>
         :root {
             --theme-color: #00ff88;
+            --bg-color: #0f172a;
+            --text-color: #f8fafc;
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+        }
+
+        body {
+            background-color: var(--bg-color);
+            background-image:
+                radial-gradient(circle at top right, rgba(0, 255, 136, 0.1), transparent),
+                radial-gradient(circle at bottom left, rgba(0, 102, 255, 0.1), transparent);
         }
 
         .markdown-section {
             max-width: 900px;
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 40px !important;
+            margin: 40px auto;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        /* Coverpage Styling */
+        section.cover {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
+        }
+
+        section.cover .cover-main {
+            z-index: 1;
+        }
+
+        section.cover h1 {
+            font-size: 4.5rem;
+            background: linear-gradient(135deg, #00ff88, #0066ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+        }
+
+        section.cover p {
+            font-size: 1.5rem;
+            color: #94a3b8;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #00ff88, #0066ff) !important;
+            border: none !important;
+            color: #0f172a !important;
+            font-weight: 700 !important;
+        }
+
+        /* Sidebar Styling */
+        .sidebar {
+            background-color: rgba(15, 23, 42, 0.8) !important;
+            backdrop-filter: blur(10px);
+            border-right: 1px solid var(--glass-border) !important;
         }
     </style>
 </head>
@@ -25,6 +80,8 @@
         window.$docsify = {
             name: 'Bala Pickleball',
             repo: 'https://github.com/hieuht817/balapickdoc',
+            coverpage: true,
+            onlyCover: true,
             loadSidebar: false,
             subMaxLevel: 2,
             auto2top: true,

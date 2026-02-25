@@ -1,6 +1,8 @@
 # 🤝 Văn hóa & Quy định Chung
 
 ## 1. Văn hóa Fair Play (Chơi đẹp)
+![Fair Play](assets/fairplay.png)
+
 - **Tôn trọng:** Luôn tôn trọng đối thủ, đồng đội và trọng tài.
 - **Trung thực:** Tự giác báo điểm và xác nhận các tình huống bóng in/out một cách trung thực.
 - **Ngôn từ:** Không sử dụng lời lẽ thô tục hoặc gây gổ trên sân.
