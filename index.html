@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bala Pickleball Docs</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="Nội quy và thông tin sân Bala Pickleball">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+    <style>
+        :root {
+            --theme-color: #00ff88;
+        }
+
+        .markdown-section {
+            max-width: 900px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">Đang tải...</div>
+    <script>
+        window.$docsify = {
+            name: 'Bala Pickleball',
+            repo: 'https://github.com/hieuht817/balapickdoc',
+            loadSidebar: false,
+            subMaxLevel: 2,
+            auto2top: true,
+            search: 'auto',
+            plugins: [
+                function (hook, vm) {
+                    hook.beforeEach(function (html) {
+                        // Password protection for /staff
+                        if (vm.route.path.startsWith('/staff')) {
+                            if (sessionStorage.getItem('access') !== 'bala2026') {
+                                const pass = prompt("Vui lòng nhập mật khẩu nhân viên:");
+                                if (pass === 'bala2026') {
+                                    sessionStorage.setItem('access', 'bala2026');
+                                    return html;
+                                } else {
+                                    alert("Sai mật khẩu!");
+                                    window.location.hash = '#/';
+                                    return "";
+                                }
+                            }
+                        }
+                        return html;
+                    });
+                }
+            ]
+        }
+    </script>
+    <!-- Docsify v4 -->
+    <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+</body>
+
+</html>

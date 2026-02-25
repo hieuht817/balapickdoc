@@ -1,0 +1,135 @@
+:root {
+    --primary: #00ff88;
+    --secondary: #0066ff;
+    --dark: #0f172a;
+    --light: #f8fafc;
+    --glass: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --font-main: 'Outfit', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--dark);
+    color: var(--light);
+    font-family: var(--font-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Sections */
+section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.glass-card {
+    background: var(--glass);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: radial-gradient(circle at top right, rgba(0, 102, 255, 0.15), transparent),
+                radial-gradient(circle at bottom left, rgba(0, 255, 136, 0.15), transparent);
+    position: relative;
+}
+
+.hero h1 {
+    font-size: 5rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #94a3b8;
+    max-width: 600px;
+    margin-bottom: 40px;
+}
+
+/* Buttons */
+.btn {
+    padding: 16px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: var(--dark);
+}
+
+.btn-primary:hover {
+    box-shadow: 0 0 30px rgba(0, 255, 136, 0.4);
+    transform: scale(1.05);
+}
+
+/* Grid Layout */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* Staff Login */
+.login-box {
+    max-width: 400px;
+    margin: 100px auto;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid var(--glass-border);
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    margin-bottom: 20px;
+}
+
+/* Utilities */
+.text-center { text-align: center; }
+.mb-40 { margin-bottom: 40px; }
+
+@media (max-width: 768px) {
+    .hero h1 { font-size: 3rem; }
+}
