@@ -31,6 +31,19 @@
             search: 'auto',
             plugins: [
                 function (hook, vm) {
+                    // Cache busting: Force refresh markdown files every 5 mins
+                    hook.init(function () {
+                        const version = Math.floor(Date.now() / 300000); // 5 min cache
+                        const originalFetch = window.fetch;
+                        window.fetch = function () {
+                            let url = arguments[0];
+                            if (typeof url === 'string' && url.endsWith('.md')) {
+                                arguments[0] = url + (url.includes('?') ? '&' : '?') + 'v=' + version;
+                            }
+                            return originalFetch.apply(this, arguments);
+                        };
+                    });
+
                     hook.beforeEach(function (html) {
                         // Password protection for /staff
                         if (vm.route.path.startsWith('/staff')) {
